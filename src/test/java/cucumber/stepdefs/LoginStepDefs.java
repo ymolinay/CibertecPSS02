@@ -45,7 +45,7 @@ public class LoginStepDefs {
 //        paginaInventario = new PaginaInventario(driver);
     }
 
-    /*@When("Inserto un username invalido y un password valido")
+    @When("Inserto un username invalido y un password valido")
     public void iInsertAnInvalidUsername() {
         paginaLogin.ingresarUsername("locked_out_user");
         paginaLogin.ingresarPassword("secret_sauce");
@@ -68,16 +68,5 @@ public class LoginStepDefs {
             driver.quit();
             System.out.println("tearDown");
         }
-    }*/
-
-    @When("Inserto un username invalido y un password valido")
-    public void iInsertAnInvalidUsername() {
-        paginaLogin.ingresarUsername("locked_out_user");
-        paginaLogin.ingresarPassword("secret_sauce");
-    }
-
-    @Then("Me quedare en la pagina de inicio de sesion")
-    public void meQuedareEnPaginaInicioSesion() {
-        Assertions.assertTrue( "https://www.saucedemo.com".equals(driver.getCurrentUrl()) || "https://www.saucedemo.com/".equals(driver.getCurrentUrl()));
     }
 }
